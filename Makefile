@@ -1,6 +1,7 @@
-.PHONY: help web web-release web-phone desktop stats suggest suggest-wfst suggest-shadow shadow-eval visualize-lexicon visualize-lexicon-streamlit fmt test test-golden test-ui platform-check platform-check-linux platform-check-android platform-check-ios platform-check-macos platform-check-windows platform-build-windows platform-install-windows platform-uninstall-windows platform-reinstall-windows platform-smoke-windows-notepad platform-smoke-windows-notepad-python windows-package linux-package ibus-install ibus-uninstall ibus-smoke paper-current paper-current-clean
+.PHONY: help web web-release web-phone desktop stats suggest suggest-wfst suggest-shadow shadow-eval visualize-lexicon visualize-lexicon-streamlit download-page fmt test test-golden test-ui platform-check platform-check-linux platform-check-android platform-check-ios platform-check-macos platform-check-windows platform-build-windows platform-install-windows platform-uninstall-windows platform-reinstall-windows platform-smoke-windows-notepad platform-smoke-windows-notepad-python windows-package linux-package ibus-install ibus-uninstall ibus-smoke paper-current paper-current-clean
 
 DX ?= dx
+PYTHON ?= python
 APP_DIR := apps/dioxus-app
 CLI := cargo run -p khmerime_lookup_cli --bin lookup_cli --
 QUERY ?= tver
@@ -39,6 +40,7 @@ help:
 	"  make shadow-eval QUERIES=path/to/queries.txt [MODE=shadow|wfst|hybrid] [OUTPUT=report.txt]" \
 	"  make visualize-lexicon           Generate lightweight lexicon relationship views under dist/" \
 	"  make visualize-lexicon-streamlit Launch the optional Streamlit explorer for the generated views" \
+	"  make download-page               Build the cPanel static download page under dist/download-page/" \
 	"  make fmt                         Run cargo fmt" \
 	"  make test                        Run cargo test" \
 	"  make test-golden                 Run the WFST golden snapshot test" \
@@ -101,6 +103,9 @@ visualize-lexicon:
 
 visualize-lexicon-streamlit:
 	python3 -m streamlit run scripts/data/lexicon/visualize_roman_lookup_streamlit.py
+
+download-page:
+	$(PYTHON) scripts/web/build_download_page.py
 
 fmt:
 	cargo fmt --all

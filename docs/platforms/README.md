@@ -141,6 +141,18 @@ dist/windows/KhmerIME-<version>-x64.msi
 
 The package should include compiled engine data. General users should not need raw files from `data/` at runtime unless the platform deliberately supports external data updates.
 
+Build the upload-ready static download page after platform package artifacts exist:
+
+```bash
+make download-page
+```
+
+This writes `dist/download-page/`, which can be uploaded to cPanel.
+Package files are copied when present. If you build installers elsewhere, upload
+them manually to the matching `downloads/windows/` and `downloads/linux/` paths
+on cPanel. Download page settings, including the online beta URL, live in
+`site/download/site.config.json`.
+
 ## Non-Interference Rules
 
 - Keep platform-specific code in that platform's adapter crate.

@@ -31,6 +31,7 @@ make suggest QUERY=tver
 make suggest-wfst QUERY=tver
 make suggest-shadow QUERY=tver
 make shadow-eval QUERIES=path/to/queries.txt
+make download-page
 make test
 make test-golden
 make test-ui
@@ -71,6 +72,11 @@ make suggest-shadow QUERY=tver
 
 make shadow-eval QUERIES=path/to/queries.txt [MODE=shadow|wfst|hybrid] [OUTPUT=report.txt]
   Run decoder comparison on a query file.
+
+make download-page
+  Build the cPanel-ready static download page under dist/download-page/.
+  Package files are copied when present, but you can also upload compiled
+  installers manually to the generated downloads/ paths on cPanel.
 
 make test
   Run the Rust test suite.

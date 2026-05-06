@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KhmerIME Downloads</title>
+    <meta name="description" content="Download KhmerIME for Windows and Ubuntu Linux.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="download-detect.js" defer></script>
+  </head>
+  <body>
+    <header class="hero">
+      <section id="top" class="hero-grid" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <h1 id="page-title">KhmerIME</h1>
+          <p class="lead">
+            <span class="lead-primary" lang="km">កម្មវិធីវាយអក្សរខ្មែរដោយប្រើអក្សរឡាតាំង។</span>
+            <span class="lead-secondary">A Khmer input method for typing Khmer from romanized text.</span>
+          </p>
+          <div class="download-actions">
+            <a class="button primary" data-download-platform="windows" href="downloads/windows/@WINDOWS_FILE@">Download for Windows</a>
+            <a class="button secondary" data-download-platform="linux" href="downloads/linux/@LINUX_FILE@">Download for Ubuntu</a>
+          </div>
+          <p class="version">Version @VERSION@</p>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="online" class="online-section" aria-labelledby="online-title">
+        <div class="section-heading">
+          <h2 id="online-title">Try KhmerIME online</h2>
+          <p>You can also try KhmerIME in your browser.</p>
+        </div>
+        <div class="online-card">
+          <div>
+            <h3>KhmerIME beta</h3>
+            <p>Use the online beta for quick typing tests. This version does not support code-switching.</p>
+          </div>
+          <a class="button primary" href="@ONLINE_BETA_URL@" target="_blank" rel="noopener">Open online beta</a>
+        </div>
+      </section>
+
+      <section id="windows" class="platform-section" aria-labelledby="windows-title">
+        <div class="section-heading">
+          <h2 id="windows-title">Install KhmerIME for Windows</h2>
+          <p lang="km">ដំឡើង KhmerIME សម្រាប់ Windows</p>
+        </div>
+        <div class="platform-grid">
+          <article class="download-card">
+            <h3>Download</h3>
+            <p>Use the unsigned x64 MSI installer.</p>
+            <a class="button primary" href="downloads/windows/@WINDOWS_FILE@">Download MSI</a>
+            <p class="note">Windows may show a warning because this build is unsigned.</p>
+          </article>
+          <article class="steps-card">
+            <h3>Install</h3>
+            <ol>
+              <li>Download the MSI.</li>
+              <li>Run the installer as administrator.</li>
+              <li>Choose KhmerIME in Windows input settings.</li>
+            </ol>
+            <h3>Uninstall</h3>
+            <ol>
+              <li>Open Windows Settings.</li>
+              <li>Find KhmerIME in Installed apps.</li>
+              <li>Choose <strong>Uninstall</strong>.</li>
+            </ol>
+            <p class="note">Command line: <code>msiexec /x @WINDOWS_FILE@</code></p>
+          </article>
+        </div>
+      </section>
+
+      <section id="ubuntu" class="platform-section" aria-labelledby="ubuntu-title">
+        <div class="section-heading">
+          <h2 id="ubuntu-title">Install KhmerIME for Ubuntu</h2>
+          <p lang="km">ដំឡើង KhmerIME សម្រាប់ Ubuntu</p>
+        </div>
+        <div class="platform-grid">
+          <article class="download-card">
+            <h3>Download</h3>
+            <p>Use the Debian package for Ubuntu and Debian-based systems.</p>
+            <a class="button secondary" href="downloads/linux/@LINUX_FILE@">Download .deb</a>
+          </article>
+          <article class="steps-card">
+            <h3>Install</h3>
+            <pre><code>sudo apt install ./@LINUX_FILE@
+ibus restart</code></pre>
+            <ol>
+              <li>Open Ubuntu Settings.</li>
+              <li>Go to Keyboard, then Input Sources.</li>
+              <li>Add <strong>KhmerIME</strong>.</li>
+            </ol>
+            <h3>Uninstall</h3>
+            <pre><code>sudo apt remove khmerime</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section id="support" class="support-section" aria-labelledby="support-title">
+        <div class="support-card">
+          <div class="support-copy">
+            <h2 id="support-title">Support KhmerIME</h2>
+            <p>
+              KhmerIME is an ongoing open-source project dedicated to making Khmer typing easier,
+              faster, and more accessible.
+            </p>
+            <p>Your support helps sustain development, testing, packaging, and future improvements.</p>
+            <p class="note">To contribute, please scan the ABA QR code using ABA Mobile. All donations are optional and sincerely appreciated.</p>
+          </div>
+          <figure class="aba-qr">
+            <img src="assets/my-aba-cropped.png" alt="ABA QR code for supporting KhmerIME">
+            <figcaption>ABA Mobile</figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p lang="km">សូមទាញយកកញ្ចប់ដំឡើងតាមប្រព័ន្ធប្រតិបត្តិការរបស់អ្នក។</p>
+    </footer>
+  </body>
+</html>
